@@ -63,3 +63,30 @@ model Token {
 // enum TokenType {
 //   RESET_PASSWORD
 // }
+
+model Post {
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  title     String
+  author    String
+  content   String
+  comments  Comment[]
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  content   String
+  author    String
+  post      Post     @relation(fields: [postId], references: [id])
+  postId    Int
+}
+
+model Brownie {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title     String
+}
