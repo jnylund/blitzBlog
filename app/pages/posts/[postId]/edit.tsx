@@ -4,7 +4,6 @@ import Layout from "app/core/layouts/Layout"
 import getPost from "app/posts/queries/getPost"
 import updatePost from "app/posts/mutations/updatePost"
 import { PostForm, FORM_ERROR } from "app/posts/components/PostForm"
-import arrayMutators from "final-form-arrays"
 
 export const EditPost = () => {
   const router = useRouter()
